@@ -1,0 +1,9 @@
+kafka:
+  address: localhost:9092
+  topic: test
+  chan_size: 1000
+
+
+logs:
+  path: ./logs
+  collectPath: ./logs/collect/app.log

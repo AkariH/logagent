@@ -1,0 +1,100 @@
+2025-01-08T15:00:48.786+0800	INFO	init success
+2025-01-08T15:01:14.466+0800	INFO	logagent/main.go:23	init success
+2025-01-08T15:04:21.109+0800	INFO	logagent/main.go:23	init success
+2025-01-08T15:21:00.383+0800	INFO	utils/log.go:68	init success
+2025-01-08T15:21:59.977+0800	INFO	utils/log.go:61	this is an info
+2025-01-08T15:21:59.977+0800	ERROR	utils/log.go:65	this is an error
+2025-01-08T15:21:59.977+0800	DEBUG	utils/log.go:69	this is a debug
+2025-01-08T15:27:56.545+0800	INFO	utils/log.go:61	this is an info
+2025-01-08T15:27:56.545+0800	ERROR	utils/log.go:65	this is an error
+2025-01-08T15:27:56.545+0800	DEBUG	utils/log.go:69	this is a debug
+2025-01-08T15:28:08.536+0800	INFO	utils/log.go:61	this is an info
+2025-01-08T15:28:08.536+0800	ERROR	utils/log.go:65	this is an error
+2025-01-08T15:28:08.536+0800	DEBUG	utils/log.go:69	this is a debug
+2025-01-08T15:28:08.536+0800	WARN	utils/log.go:73	this is a warn
+2025-01-08T15:28:08.536+0800	FATAL	utils/log.go:77	this is a fatal
+2025-01-08T15:28:18.888+0800	INFO	utils/log.go:61	this is an info
+2025-01-08T15:28:18.888+0800	ERROR	utils/log.go:65	this is an error
+2025-01-08T15:28:18.888+0800	DEBUG	utils/log.go:69	this is a debug
+2025-01-08T15:28:18.888+0800	WARN	utils/log.go:73	this is a warn
+2025-01-08T15:33:10.333+0800	INFO	logger/log.go:61	this is an info
+2025-01-08T15:33:10.333+0800	ERROR	logger/log.go:65	this is an error
+2025-01-08T15:33:10.333+0800	DEBUG	logger/log.go:69	this is a debug
+2025-01-08T15:33:10.333+0800	WARN	logger/log.go:73	this is a warn
+2025-01-08T15:39:35.462+0800	INFO	logger/log.go:61	kafka config	{"kafka": {"address":"localhost:9092"}}
+2025-01-08T15:39:35.463+0800	INFO	logger/log.go:61	log path	{"log": null}
+2025-01-08T15:39:35.463+0800	INFO	logger/log.go:61	this is an info
+2025-01-08T15:39:35.463+0800	ERROR	logger/log.go:65	this is an error
+2025-01-08T15:39:35.463+0800	DEBUG	logger/log.go:69	this is a debug
+2025-01-08T15:39:35.463+0800	WARN	logger/log.go:73	this is a warn
+2025-01-08T15:40:26.723+0800	INFO	logger/log.go:61	kafka config	{"kafka": {"address":"localhost:9092"}}
+2025-01-08T15:40:26.723+0800	INFO	logger/log.go:61	log path	{"log": {"path":"./log"}}
+2025-01-08T15:40:26.723+0800	INFO	logger/log.go:61	this is an info
+2025-01-08T15:40:26.723+0800	ERROR	logger/log.go:65	this is an error
+2025-01-08T15:40:26.724+0800	DEBUG	logger/log.go:69	this is a debug
+2025-01-08T15:40:26.724+0800	WARN	logger/log.go:73	this is a warn
+2025-01-08T15:40:52.448+0800	INFO	logger/log.go:61	kafka config	{"kafka": "localhost:9092"}
+2025-01-08T15:40:52.448+0800	INFO	logger/log.go:61	log path	{"log": {"path":"./log"}}
+2025-01-08T15:40:52.448+0800	INFO	logger/log.go:61	this is an info
+2025-01-08T15:40:52.448+0800	ERROR	logger/log.go:65	this is an error
+2025-01-08T15:40:52.448+0800	DEBUG	logger/log.go:69	this is a debug
+2025-01-08T15:40:52.448+0800	WARN	logger/log.go:73	this is a warn
+2025-01-08T15:44:32.511+0800	INFO	logger/log.go:61	kafka config	{"kafka": "localhost:9092"}
+2025-01-08T15:44:32.511+0800	INFO	logger/log.go:61	log path is ./log
+2025-01-08T15:44:32.511+0800	INFO	logger/log.go:61	this is an info
+2025-01-08T15:44:32.511+0800	ERROR	logger/log.go:65	this is an error
+2025-01-08T15:44:32.513+0800	DEBUG	logger/log.go:69	this is a debug
+2025-01-08T15:44:32.513+0800	WARN	logger/log.go:73	this is a warn
+2025-01-08T15:45:03.353+0800	INFO	logger/log.go:61	kafka config	{"kafka": "localhost:9092"}
+2025-01-08T15:45:03.354+0800	INFO	logger/log.go:61	log path is 	{"log_path": "./log"}
+2025-01-08T15:45:03.354+0800	INFO	logger/log.go:61	this is an info
+2025-01-08T15:45:03.355+0800	ERROR	logger/log.go:65	this is an error
+2025-01-08T15:45:03.355+0800	DEBUG	logger/log.go:69	this is a debug
+2025-01-08T15:45:03.355+0800	WARN	logger/log.go:73	this is a warn
+2025-01-08T15:48:09.801+0800	INFO	logger/log.go:61	kafka config is localhost:9092
+2025-01-08T15:48:09.802+0800	INFO	logger/log.go:61	log path is ./log
+2025-01-08T15:48:09.802+0800	INFO	logger/log.go:61	this is an info
+2025-01-08T15:48:09.802+0800	ERROR	logger/log.go:65	this is an error
+2025-01-08T15:48:09.802+0800	DEBUG	logger/log.go:69	this is a debug
+2025-01-08T15:48:09.802+0800	WARN	logger/log.go:73	this is a warn
+2025-01-08T16:22:56.420+0800	INFO	logger/log.go:61	localhost:9092
+2025-01-08T16:22:56.421+0800	INFO	logger/log.go:61	startting...
+2025-01-08T16:23:37.591+0800	INFO	logger/log.go:61	localhost:9092
+2025-01-08T16:23:37.591+0800	INFO	logger/log.go:61	localhost:9092
+2025-01-08T16:23:37.591+0800	INFO	logger/log.go:61	startting...
+2025-01-08T16:26:00.019+0800	INFO	logger/log.go:61	localhost:9092
+2025-01-08T16:26:00.019+0800	INFO	logger/log.go:61	127.0.0.1
+2025-01-08T16:26:00.019+0800	INFO	logger/log.go:61	startting...
+2025-01-08T16:28:28.136+0800	INFO	logger/log.go:61	localhost:9092
+2025-01-08T16:28:28.137+0800	INFO	logger/log.go:61	startting...
+2025-01-08T16:28:58.301+0800	INFO	logger/log.go:61	cfg is	{"cfg": {"Address":"localhost:9092","Topic":"test"}}
+2025-01-08T16:28:58.301+0800	INFO	logger/log.go:61	starting...
+2025-01-08T16:29:20.363+0800	INFO	logger/log.go:61	cfg is	{"cfg": {"KafkaConfig":{"Address":"localhost:9092","Topic":"test"}}}
+2025-01-08T16:29:20.364+0800	INFO	logger/log.go:61	starting...
+2025-01-08T16:46:30.751+0800	INFO	logger/log.go:61	starting...
+2025-01-08T16:46:30.844+0800	INFO	logger/log.go:61	connect to kafka success
+2025-01-08T16:47:04.397+0800	INFO	logger/log.go:61	starting...
+2025-01-08T16:47:04.423+0800	INFO	logger/log.go:61	connect to kafka success
+2025-01-08T16:47:04.423+0800	INFO	logger/log.go:61	test success
+2025-01-08T16:47:09.420+0800	INFO	logger/log.go:61	starting...
+2025-01-08T16:47:09.428+0800	INFO	logger/log.go:61	connect to kafka success
+2025-01-08T16:47:09.428+0800	INFO	logger/log.go:61	test success
+2025-01-08T17:31:01.817+0800	INFO	logagent/main.go:23	starting...
+2025-01-08T17:31:01.824+0800	INFO	kafka/kafka.go:25	connect to kafka success
+2025-01-08T17:31:01.824+0800	INFO	logagent/test.go:17	test success
+2025-01-08T18:05:10.087+0800	INFO	logagent/main.go:23	starting...
+2025-01-08T18:05:10.099+0800	INFO	kafka/kafka.go:25	connect to kafka success
+2025-01-08T18:05:10.099+0800	INFO	logagent/test.go:17	test success
+2025-01-08T18:05:11.614+0800	INFO	logagent/main.go:23	starting...
+2025-01-08T18:05:11.627+0800	INFO	kafka/kafka.go:25	connect to kafka success
+2025-01-08T18:05:11.627+0800	INFO	logagent/test.go:17	test success
+2025-01-08T18:05:28.653+0800	INFO	logagent/main.go:23	starting...
+2025-01-08T18:05:28.663+0800	INFO	kafka/kafka.go:25	connect to kafka success
+2025-01-08T18:05:28.664+0800	INFO	logagent/test.go:17	test success
+2025-01-08T18:05:28.664+0800	INFO	logagent/test.go:18	test success
+2025-01-08T18:05:28.664+0800	INFO	logagent/test.go:19	test success
+2025-01-08T18:06:50.331+0800	INFO	logagent/main.go:23	starting...
+2025-01-08T18:06:50.339+0800	INFO	kafka/kafka.go:25	connect to kafka success
+2025-01-08T18:06:50.340+0800	INFO	logagent/test.go:17	test success
+2025-01-08T18:06:50.340+0800	INFO	logagent/test.go:18	test success
+2025-01-08T18:06:50.340+0800	INFO	logagent/test.go:19	test success
