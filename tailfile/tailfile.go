@@ -1,6 +1,7 @@
 package tailfile
 
 import (
+	"fmt"
 	"github.com/nxadm/tail"
 	"logagent/utils/logger"
 )
@@ -30,4 +31,16 @@ func Init(filename string) error {
 
 func GetTailFile() *tail.Tail {
 	return Tailfile
+}
+
+func ReadLine() (*tail.Line, error) {
+	line, ok := <-Tailfile.Lines
+	if !ok {
+		// Log the warning about the tail file being closed
+		logger.Warnf("Tail file closed, filename: %s", Tailfile.Filename)
+
+		return nil, fmt.Errorf("tail file closed, filename: %s", Tailfile.Filename)
+	}
+	logger.Infof("line: %s", line.Text)
+	return line, nil
 }

@@ -6,26 +6,45 @@ import (
 	"logagent/kafka"
 	"logagent/tailfile"
 	"logagent/utils/logger"
-	"time"
 )
 
-func Run() error {
+var (
+	msg *sarama.ProducerMessage
+	cfg *config.Config
+)
 
-	for {
-		line, ok := <-tailfile.Tailfile.Lines
-		if !ok {
-			logger.Warnf("tail file close reopen, filename:%s\n", tailfile.Tailfile.Filename)
-			time.Sleep(time.Second)
-			continue
-		}
-		logger.Infof("msg is %s", line.Text)
-		msg := &sarama.ProducerMessage{}
-		cfg := config.GetConfig()
-		msg.Topic = cfg.KafkaConfig.Topic
-		msg.Value = sarama.StringEncoder(line.Text)
+type Service struct {
+    kafkaProducer *kafka.KafkaProducer
+    KafkaConfig   KafkaConfiguration
+}
 
-		kafka.MsgChan <- msg
-	}
+type KafkaConfiguration struct {
+    Topic string
+    // Add other Kafka-related configurations if needed
+}
 
-	return nil
+// NewService creates a new Service instance
+func NewService(producer *kafka.KafkaProducer, config KafkaConfiguration) *Service {
+    return &Service{
+        kafkaProducer: producer,
+        KafkaConfig:   config,
+    }
+}
+
+// ProcessLogs reads lines from the tailed file and sends them to Kafka
+func (s *Service) ProcessLogs() error {
+    for {
+        line, err := tailfile.ReadLine()
+        if err != nil {
+            return err
+        }
+
+        logger.Infof("text: %s", line.Text)
+
+        // Create a new Kafka message
+        msg := kafka.NewKafkaMsg(s.KafkaConfig.Topic, line.Text)
+
+        // Send the message using KafkaProducer
+        s.kafkaProducer.Send(msg)
+    }
 }

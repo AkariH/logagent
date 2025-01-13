@@ -24,7 +24,7 @@ func Init() {
 	config.InitConfig()
 	cfg := config.GetConfig()
 	defer logger.Sync()
-	err := kafka.InitKafka([]string{cfg.KafkaConfig.Address}, cfg.KafkaConfig.ChanSize)
+	_,err := kafka.NewKafkaProducer([]string{cfg.KafkaConfig.Address})
 	if err != nil {
 		logger.Errorf("init kafka failed, err:%v", err)
 	}
@@ -35,5 +35,9 @@ func Init() {
 	}
 	logger.Infof("init tailfile success")
 
-	service.Run()
+	s:= service.NewService(kafka.GetKafkaProducer(), service.KafkaConfiguration{
+		Topic: cfg.KafkaConfig.Topic,
+})
+s.ProcessLogs()
+
 }
