@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"runtime"
 	"sync"
 	"time"
 
@@ -111,4 +112,34 @@ func Fatalf(format string, args ...interface{}) {
 
 func Sync() {
 	logger.Sync()
+}
+
+// AddWithLog adds delta to the WaitGroup and logs the action along with caller info.
+func AddWithLog(wg *sync.WaitGroup, delta int, description string) {
+    wg.Add(delta)
+    file, line := getCallerInfo(1)
+    Infof("WaitGroup: Add(%d) called for %s at %s:%d", delta, description, file, line)
+}
+
+// DoneWithLog marks the WaitGroup as done and logs the action along with caller info.
+func DoneWithLog(wg *sync.WaitGroup, description string) {
+    wg.Done()
+    file, line := getCallerInfo(1)
+    Infof("WaitGroup: Done() called for %s at %s:%d", description, file, line)
+}
+
+// getCallerInfo retrieves the caller's file name and line number.
+func getCallerInfo(skip int) (string, int) {
+    // skip=0: getCallerInfo
+    // skip=1: caller of getCallerInfo (AddWithLog or DoneWithLog)
+    // skip=2: caller of AddWithLog or DoneWithLog
+    pc, file, line, ok := runtime.Caller(skip + 1)
+    if !ok {
+        return "unknown", 0
+    }
+    fn := runtime.FuncForPC(pc)
+    if fn == nil {
+        return file, line
+    }
+    return fmt.Sprintf("%s", fn.Name()), line
 }

@@ -41,6 +41,11 @@ func ReadLine() (*tail.Line, error) {
 
 		return nil, fmt.Errorf("tail file closed, filename: %s", Tailfile.Filename)
 	}
-	logger.Infof("line: %s", line.Text)
+	// Check if the line is empty or contains only whitespace
+	if len(line.Text) == 0 || len([]rune(line.Text)) == 0 {
+		// Silently ignore empty lines without logging
+		return nil, nil
+	}
+	logger.Debugf("line: %s", line.Text)
 	return line, nil
 }
